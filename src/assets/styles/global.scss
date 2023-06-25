@@ -1,0 +1,116 @@
+@import './variables.scss';
+
+@font-face {
+  font-family: 'UbuntuRegular';
+  src: url('../fonts/UbuntuRegular.ttf');
+};
+@font-face {
+  font-family: 'UbuntuBold';
+  src: url('../fonts/UbuntuBold.ttf');
+};
+@font-face {
+  font-family: 'UbuntuLight';
+  src: url('../fonts/UbuntuLight.ttf');
+};
+
+* {
+  font-family: $fontRegular;
+  font-size: 14px;
+}
+
+html, body{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+
+#root{
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;  
+}
+
+input {
+  font-size: 14px;
+  letter-spacing: 0.01em;
+  color: $corPrimaria3;
+  border-radius: 0;
+  border: none;
+  outline: none;
+  background-color: transparent;
+
+  &::placeholder {
+    color: $cinza2;
+    opacity: 1;
+  }
+  &:-ms-input-placeholder {
+    color: $cinza2;
+  }
+  &::-ms-input-placeholder {
+    color: $cinza2;
+  }
+}
+
+button{
+  width: 100%;
+  height: 48px;
+  background-color: $corPrimaria3;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: $fontBold;
+
+  @media screen and (min-width: $desktopBreakpoint) {
+    background-color: $corPrimaria4;
+    &:hover{
+      background-color: $corPrimaria3;
+    }
+    &.disabled{
+      cursor: not-allowed;
+
+      &:hover{
+        background-color: $cinza2;
+      }
+    }
+  }
+}
+
+.oculto {
+  display: none;
+}
+
+.scroll {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 75%;
+  overflow-y: scroll;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 0;
+  margin: 0;
+
+  &::-webkit-scrollbar{
+    width: 6px;
+  }
+  &::-webkit-scrollbar-track{
+    background-color: $corPrimaria5;
+    border-radius: 8px;
+  }
+  &::-webkit-scrollbar-thumb{
+    background-color: $corPrimaria2;
+    border-radius: 8px;
+  }
+}
+
+
+@import './public.scss';
+@import './publicInput.scss';
