@@ -27,6 +27,7 @@ const PublicInput: React.FC<PublicInputType> = ({
         onFocus={() => setFocus(true)}
         onBlur={() => setFocus(false)}
         onChange={(e) => setValue(e.target.value)}
+        value={modelValue}
       />
     </div>
   );
