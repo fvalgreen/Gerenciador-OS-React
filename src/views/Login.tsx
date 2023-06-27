@@ -3,6 +3,9 @@ import mail from "../assets/images/user.svg";
 import key from "../assets/images/lock.svg";
 import logo from "../assets/images/logo.svg";
 import PublicInput from "../components/PublicInput";
+import { AuthServices } from "../services/AuthServices";
+
+const authServices = new AuthServices();
 
 const Login = () => {
   const [login, setLogin] = useState("");
@@ -11,9 +14,25 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
 
   const doLogin = async () => {
+    try {
+      setError("")
+      if(!login || login.trim().length < 5 || !password || password.trim().length < 6){
+        return setError("Favor preencher os campos corretamente")
+      }
+      setLoading(true);
 
-    alert(`login: ${login}, senha: ${password}`)
-  }
+      await authServices.login({login, senha: password});
+      setLoading(false);
+
+    } catch (err: any) {
+      console.log("Erro ao efetuar o login: ", err);
+      setLoading(false);
+      if(err?.response?.data?.erro){
+        return setError(err?.response?.data?.erro);
+      }
+      return setError("Não foi possível realizar o login, por favor tente novamente.");
+    }
+  };
 
   return (
     <>
@@ -22,12 +41,26 @@ const Login = () => {
           <img src={logo} alt="Logo" />
         </div>
         <form>
-          <PublicInput icon={mail} name="Email" type="text" alt="Email" modelValue={login} setValue={setLogin} />
-          <PublicInput icon={key} name="Senha" type="password" alt="Senha" modelValue={password} setValue={setPassword} />          
-          {error && 
-            <p className="error">{error}</p>
-          }
-          <button type="button" onClick={doLogin}>Login</button>
+          <PublicInput
+            icon={mail}
+            name="Email"
+            type="text"
+            alt="Email"
+            modelValue={login}
+            setValue={setLogin}
+          />
+          <PublicInput
+            icon={key}
+            name="Senha"
+            type="password"
+            alt="Senha"
+            modelValue={password}
+            setValue={setPassword}
+          />
+          {error && <p className="error">{error}</p>}
+          <button type="button" onClick={doLogin}>
+            Login
+          </button>
         </form>
         <div className="register-info">
           <p>Não possui conta?</p>
