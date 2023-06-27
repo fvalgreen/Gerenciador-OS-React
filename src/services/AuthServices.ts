@@ -18,4 +18,8 @@ export class AuthServices extends HttpApiServices {
     localStorage.clear();
     setToken('')
   }
+
+  register(body: any){
+    return this.post('/cadastro', body)
+  }
 }

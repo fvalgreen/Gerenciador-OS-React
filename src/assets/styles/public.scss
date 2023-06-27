@@ -1,6 +1,6 @@
-@import './variables.scss';
+@import "./variables.scss";
 
-.container-public{
+.container-public {
   width: 100%;
   height: 100%;
   display: flex;
@@ -8,32 +8,42 @@
   justify-content: center;
   align-items: center;
 
-  .logo{
+  .logo {
     width: 40%;
     margin-bottom: 50px;
 
-    img{
+    img {
       width: 100%;
     }
   }
 
   form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 70%;
 
-    .input-public{
+    .input-public {
       padding-top: 10px;
       padding-bottom: 5px;
       margin-bottom: 15px;
-      border-bottom: 1px solid $cinza2;      
+      border-bottom: 1px solid $cinza2;
 
-      &.focus{
+      &.focus {
         border-bottom-color: $corPrimaria3;
       }
+    }
+
+    .error, .success {
+      text-align: center;
+      margin-bottom: 1px;
     }
 
     button {
       margin-top: 20px;
     }
-    .register-info{
+    .info {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -53,11 +63,11 @@
     width: 100%;
     height: 100%;
 
-    .logo{
+    .logo {
       width: 20%;
       margin-right: 50px;
-  
-      img{
+
+      img {
         width: 100%;
       }
     }
@@ -67,11 +77,6 @@
       width: 30%;
       border-radius: 8px;
       padding: 30px;
-
-      .input-public{
-        flex: 1;
-      }
     }
   }
-
 }

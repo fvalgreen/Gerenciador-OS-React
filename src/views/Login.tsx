@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
-import mail from "../assets/images/user.svg";
+import { Link, useSearchParams } from "react-router-dom";
+import mail from "../assets/images/mail.svg";
 import key from "../assets/images/lock.svg";
 import logo from "../assets/images/logo.svg";
 import PublicInput from "../components/PublicInput";
@@ -14,6 +14,9 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+
+  const [searchParams] = useSearchParams();
+  const success = searchParams.get('success')
 
   const { setToken } = useContext(AuthorizeContext);
 
@@ -51,6 +54,7 @@ const Login = () => {
           <img src={logo} alt="Logo" />
         </div>
         <form>
+          {success && <p className="success">Cadastro efetuado com sucesso, faça seu login</p>}
           <PublicInput
             icon={mail}
             name="Email"
@@ -68,8 +72,8 @@ const Login = () => {
             setValue={setPassword}
           />
           {error && <p className="error">{error}</p>}
-          <button type="button" onClick={doLogin}>
-            Login
+          <button type="button" onClick={doLogin} disabled={loading} className={loading? 'disabled' : ''}>
+            {loading ? "...Carregando" : "Login"}
           </button>
           <div className="register-info">
             <p>Não possui conta?</p>
