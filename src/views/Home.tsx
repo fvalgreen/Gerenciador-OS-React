@@ -1,7 +1,14 @@
+import { Footer } from "../components/Footer";
+import Header from "../components/Header";
+
 const Home = () => {
   return (
-    <h1>Home</h1>
-  )
-}
+    <>
+      <Header />
+      <h1 className="teste">Teste</h1>
+      <Footer />
+    </>
+  );
+};
 
 export default Home;

@@ -122,6 +122,12 @@ button{
   color: $success;
 }
 
+.teste{
+  flex: 1;
+}
 
 @import './public.scss';
 @import './publicInput.scss';
+@import './navigation.scss';
+@import './header.scss';
+@import './footer.scss';
