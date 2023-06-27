@@ -59,7 +59,7 @@ input {
 button{
   width: 100%;
   height: 48px;
-  background-color: $corPrimaria3;
+  background-color: $corPrimaria;
   border: none;
   outline: none;
   border-radius: 8px;
@@ -69,9 +69,9 @@ button{
   font-family: $fontBold;
 
   @media screen and (min-width: $desktopBreakpoint) {
-    background-color: $corPrimaria4;
+    background-color: $corPrimaria;
     &:hover{
-      background-color: $corPrimaria3;
+      background-color: $corPrimaria2;
     }
     &.disabled{
       cursor: not-allowed;
