@@ -1,0 +1,96 @@
+@import "./variables.scss";
+
+.container-ticket-list {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: 99%;
+  overflow-y: scroll;
+  overflow-x: none;
+
+  .container-ticket {
+    width: 98%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    max-width: 95%;
+    border-bottom: 0.5px solid $corPrimaria;
+    margin-top: 5px;
+
+    .ticket-image {
+      width: 60px;
+      height: 60px;
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .ticket-info {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0 5px;
+      
+
+      .ticket-title, .ticket-location, .ticket-description{
+        margin: 0;
+      }
+
+      .ticket-title {
+        font-size: 16px;
+        margin: 0;
+      }
+
+      .ticket-row {
+        display: flex;
+        flex-direction: row;
+        
+        .ticket-author, .ticket-department{
+          font-size: 12px;
+          text-align: center;
+        }
+        .ticket-author{
+          margin-right: 5px;
+        }
+      
+
+      
+      }
+      
+    }
+
+    .ticket-date-status {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      .ticket-date{
+        font-size: 10px;
+        text-align: center;
+      }
+
+      .ticket-status{
+        width: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: auto;
+        border: 0.5px solid green;
+        border-radius: 10px;
+        background-color: green;
+        
+        span {
+          font-size: 12px;
+          color: white;
+        }
+      }
+    }
+  }
+}
