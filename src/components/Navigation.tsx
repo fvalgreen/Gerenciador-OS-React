@@ -20,7 +20,7 @@ export const Navigation = () => {
         }
         return home;
       case 'chamados':
-        if(location.pathname === '/chamados'){
+        if(location.pathname === '/chamados' || location.pathname === '/newTicket'){
           return notebookAtivo;
         }
         return notebook;

@@ -23,10 +23,10 @@ export const Ticket: React.FC<TicketProps> = ({
     const ano = data.split("-")[0];
     const mes = data.split("-")[1];
     const dia = data.split("-")[2].split("T")[0];
-    const horario = data.split("T")[1];
-    const hora = horario.split(":")[0];
-    const minutos = horario.split(":")[1];
-    const segundos = horario.split(":")[2].split(".")[0];
+    // const horario = data.split("T")[1];
+    // const hora = horario.split(":")[0];
+    // const minutos = horario.split(":")[1];
+    // const segundos = horario.split(":")[2].split(".")[0];
 
     return `${dia}/${mes}/${ano}`;
   };

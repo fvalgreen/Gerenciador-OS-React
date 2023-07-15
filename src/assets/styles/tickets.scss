@@ -36,9 +36,10 @@
       align-items: center;
       justify-content: center;
       margin: 0 5px;
-      
 
-      .ticket-title, .ticket-location, .ticket-description{
+      .ticket-title,
+      .ticket-location,
+      .ticket-description {
         margin: 0;
       }
 
@@ -50,19 +51,16 @@
       .ticket-row {
         display: flex;
         flex-direction: row;
-        
-        .ticket-author, .ticket-department{
+
+        .ticket-author,
+        .ticket-department {
           font-size: 12px;
           text-align: center;
         }
-        .ticket-author{
+        .ticket-author {
           margin-right: 5px;
         }
-      
-
-      
       }
-      
     }
 
     .ticket-date-status {
@@ -70,12 +68,12 @@
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      .ticket-date{
+      .ticket-date {
         font-size: 10px;
         text-align: center;
       }
 
-      .ticket-status{
+      .ticket-status {
         width: 80px;
         display: flex;
         align-items: center;
@@ -85,12 +83,16 @@
         border: 0.5px solid green;
         border-radius: 10px;
         background-color: green;
-        
+
         span {
           font-size: 12px;
           color: white;
         }
       }
     }
+  }
+
+  @media screen and (min-width: $desktopBreakpoint) {
+    width: 50%;
   }
 }

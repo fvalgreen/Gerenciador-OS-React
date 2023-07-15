@@ -36,6 +36,9 @@ html, body{
   flex-direction: column;
   align-items: center;
   justify-content: center;  
+  position: absolute;
+  overflow: hidden;
+
 }
 
 input {
@@ -135,3 +138,4 @@ button{
 @import './header.scss';
 @import './footer.scss';
 @import './tickets.scss';
+@import './addTicket.scss';

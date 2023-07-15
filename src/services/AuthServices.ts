@@ -1,7 +1,7 @@
 import { HttpApiServices } from "./HttpApiServices";
 
 export class AuthServices extends HttpApiServices {
-  async login(body: any, setToken: any) {
+  async login(body: any, setToken: any, setNivelAcesso: any) {
     const { data } = await this.post("/login", body);
 
     if (data) {
@@ -12,6 +12,7 @@ export class AuthServices extends HttpApiServices {
       localStorage.setItem("id", data.id);
     }
     setToken(data.token);
+    setNivelAcesso(data.nivelAcesso);
   }
 
   logout(setToken: any) {

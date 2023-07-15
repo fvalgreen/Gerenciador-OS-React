@@ -18,7 +18,7 @@ const Login = () => {
   const [searchParams] = useSearchParams();
   const success = searchParams.get('success')
 
-  const { setToken } = useContext(AuthorizeContext);
+  const { setToken, setNivelAcesso } = useContext(AuthorizeContext);
 
   const doLogin = async () => {
     try {
@@ -33,7 +33,7 @@ const Login = () => {
       }
       setLoading(true);
 
-      await authServices.login({ login, senha: password }, setToken);
+      await authServices.login({ login, senha: password }, setToken, setNivelAcesso);
       setLoading(false);
     } catch (err: any) {
       console.log("Erro ao efetuar o login: ", err);
