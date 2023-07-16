@@ -1,0 +1,67 @@
+@import "./variables.scss";
+.new-ticket-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  .upload-image-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 300px;
+    .image-preview-container {
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 0;
+
+      .image-preview {
+        width: auto;
+        height: 100%;
+        margin-bottom: 0;
+      }
+    }
+    p {
+      margin-top: 0;
+      font-size: 16px;
+      color: $corPrimaria;
+      font-family: $fontBold;
+    }
+  }
+
+  .new-ticket-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    input{
+      width: 70%;
+      height: 20px;
+      border-bottom: 1px solid $corPrimaria;     
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    textarea{
+      border: none;
+      outline: none;
+      overflow: hidden;
+      text-align: center;
+    }
+  }
+
+  button {
+    width: 70%;
+  }
+}

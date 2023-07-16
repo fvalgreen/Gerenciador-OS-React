@@ -8,7 +8,7 @@ const AddTicket = () => {
     navigate("/newTicket");
   };
   return (
-    <div className="addContainer" onClick={addNewTicket}>
+    <div className="add-container" onClick={addNewTicket}>
       <img src={addIcon} alt="Adicionar chamado" />
     </div>
   );

@@ -10,7 +10,6 @@ export const Navigation = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const mobile = window.innerWidth <= 760;
 
   const getIcon = (name: string) => {
     switch(name){
